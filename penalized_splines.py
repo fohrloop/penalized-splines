@@ -39,21 +39,29 @@ def create_pspline(
     kappa_penalty=10**6,
     maxiter: int = 30,
 ) -> BSpline:
-    """
+    """Creates a B-Spline (with penalties it's called P-Spline) instance using the
+    give data and parameters.
+
     Parameters
     ----------
+    x_train: array-like
+        The x-coordinates of the training data.
+    y_train: array-like
+        The y-coordinates of the training data.
     bspline_degree: int
         The degree of the B-spline (which is also the degree of the fitted spline
         function). The order of the splines is degree + 1.
     knot_segments: int
-        number of inter-knot segments between min(x) and max(x). Defines the number of
-        knots. Will be limited to len(x)-2. (giving too high number will result in
-        len(x)-2).
+        number of inter-knot segments between min(x_train) and max(x_train). Defines the
+        number of internal knots, which is knot_segments + 1. The total amount of knots
+        is calculated as `bspline_degree * 2 + knot_segments + 1`; Few knots will be
+        added outside of the `x_train` range to fix boundary effects.
     lambda_smoothing: float
         The smoothing parameter. Higher values will result in smoother curves.
     kappa_penalty: float
         The penalty parameter for enforcing monotonicity. Higher values will result in
-        more monotonic curves.
+        more monotonic curves. kappa_penalty of 0 means that monotonicity is not
+        enforced at all.
     maxiter: int
         Maximum number of iterations for the algorithm. If the algorithm does not
         converge within this number of iterations, a warning is issued.
