@@ -1,0 +1,17 @@
+[project]
+name = "monotone-smoothing-b-splines"
+version = "1.0.0"
+description = "Monotone smoothing splines implementation using penalized B-splines (aka. P-splines)"
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = [
+    "numpy>1.24.4",
+    "scipy>=1.8.0",
+]
+authors = [
+    { name = "Niko Föhr", email = "fohrloop@gmail.com" } 
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
