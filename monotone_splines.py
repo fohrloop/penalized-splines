@@ -30,7 +30,7 @@ from scipy.interpolate import BSpline
 class MaxIterationWarning(UserWarning): ...
 
 
-def create_monotone_bspline(
+def create_pspline(
     x_train,
     y_train,
     bspline_degree=3,
