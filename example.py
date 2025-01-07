@@ -9,7 +9,7 @@ except ImportError:
     exit()
 
 
-from monotone_splines import create_pspline
+from penalized_splines import create_pspline
 
 if __name__ == "__main__":
     y = np.array([1.0, 2.0, 2.5, 3.4, 3.0, 3.6, 3.33, 3.0])

@@ -1,6 +1,6 @@
-# Monotone Smoothing B-Splines
+# Penalized B-Splines
 
-Monotone smoothing splines implementation using penalized B-splines (aka. P-splines).
+Offers (monotonically increasing) smoothing splines implementation using penalized B-splines (aka. P-splines).
 
 Solves the equation
 
@@ -33,7 +33,7 @@ Usage example:
 import numpy as np
 from matplotlib import pyplot as plt
 
-from monotone_splines import create_pspline
+from penalized_splines import create_pspline
 
 y = np.array([1.0, 2.0, 2.5, 3.4, 3.0, 3.6, 3.33, 3.0])
 x = np.array([1, 8, 15, 22, 30, 38, 46, 54])
